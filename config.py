@@ -11,7 +11,12 @@
 ##                                 #
 ####################################
 
-
+######
+#
+# Library for web scraping job finder tool. Framework for web scraping in general.
+# Brian C, Ben C
+#
+######
 
 import requests
 from urllib.parse import urlparse
@@ -66,6 +71,8 @@ class site_search:
             self.req_params = False
         else:
             [self.req_params.pop(key) for key in spc_params]
+            
+    
         
     
     """
