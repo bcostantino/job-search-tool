@@ -11,21 +11,25 @@
 ##                                 #
 ####################################
 
+
+
 import requests
 from urllib.parse import urlparse
 from urllib.parse import urlencode
 from bs4 import BeautifulSoup
+
+
 
 # create site search class
 class site_search:
     
     #######
     ## In order to register a site as a site search object, one must know ALL NECESSSARY query paramaters.
-    ## The paramaters will be passed to the object as a  containing paramater name(s). 
+    ## The paramaters will be passed by paramater name(s). See self.set_params...
     #######
     
     # initialize variables
-    def __init__(self, url, params):
+    def __init__(self, url, params=False):
         self.site_url = url
         self.req_params = params
     
@@ -36,6 +40,32 @@ class site_search:
     # create readable str format of object
     def __str__(self):
         return f"Endpoint: {self.site_url}\nParamaters: {self.req_params}"
+    
+    #######
+    ## This function has two purposes, initializing, or changing paramaters. If self.req_params == False,
+    ## object params are not set, and must be passes in as a dictionary object called params. To add new
+    ## params to a preexisting dictionary, pass indivisual kwargs to a dict called **nn_params
+    #######
+    
+    # function to set params if not initialized
+    def set_params(self, params, **nn_params):
+        
+        # check paramater state
+        if not self.req_params:
+            self.req_params = params
+        else:
+            if nn_params:
+                for key in nn_params:
+                    self.req_params[key] = nn_params[key]
+            else:
+                return False
+    
+    # function to clear paramaters. specify specific args to remove as kwargs (i.e. **spc_params)
+    def clr_params(self, **spc_params):
+        if not spc_params:
+            self.req_params = False
+        else:
+            [self.req_params.pop(key) for key in spc_params]
         
     
     """
@@ -60,13 +90,16 @@ class site_search:
 
 # create and format example url
 my_url = r'https://www.indeed.com/jobs?'
-query_vals = {'q':'Software Engineer',
-              'l':'Sicklerville, NJ 08081',
-              'radius': 50,
-              'jt':'fulltime'}
+
 
 #my_url += urlencode(query_vals)
 
 # test class
-site1 = site_search(my_url, query_vals)
+site1 = site_search(my_url)
+site1.set_params(params={'q':'Software Engineer',
+                          'l':'Sicklerville, NJ 08081',
+                          'radius': 50,
+                          'jt':'fulltime'})
+print(site1)
+site1.clr_params()
 print(site1)
