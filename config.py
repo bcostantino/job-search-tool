@@ -79,6 +79,11 @@ class site_search:
             self.req_params = False
         else:
             [self.req_params.pop(key) for key in spc_params]
+    
+    # get useable http request endpoint
+    def get_req_endpoint(self):
+        return self.site_url + urlencode(self.req_params)
+        
             
     
         
@@ -106,9 +111,6 @@ class site_search:
 # create and format example url
 my_url = r'https://www.indeed.com/jobs?'
 
-
-#my_url += urlencode(query_vals)
-
 # test class
 site1 = site_search(my_url)
 site1.set_params(params={'q':'Software Engineer',
@@ -116,5 +118,4 @@ site1.set_params(params={'q':'Software Engineer',
                           'radius': 50,
                           'jt':'fulltime'})
 print(site1)
-site1.clr_params()
-print(site1)
+print(site1.get_req_endpoint())
