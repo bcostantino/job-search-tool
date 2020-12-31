@@ -12,6 +12,7 @@
 ####################################
 
 import requests
+from urllib.parse import urlparse
 from bs4 import BeautifulSoup
 
 # create site search class
@@ -28,7 +29,10 @@ class site_search:
         self.page = requests.get(self.site_url)
         
         return formExists
-    
-my_url = r'https://www.indeed.com/?sq=1'
-site1 = site_search(my_url)
         
+# create example url
+my_url = r'https://www.indeed.com/jobs?q={query}&l={where}&radius={rad}&jt={type}'
+query_vals = {'query':''}
+
+# test class
+site1 = site_search(my_url)
