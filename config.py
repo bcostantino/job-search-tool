@@ -27,7 +27,13 @@ class site_search:
     def is_site_form(self):
         formExists = False
         
+        # scrape site to find form
         self.page = requests.get(self.site_url)
+        self.soup = BeautifulSoup(self.page.text, "html.parser")
+        self.form = self.soup.find_all('form')
+        
+        for form in self.form:
+            print(form.prettify())
         
         return formExists
         
@@ -38,9 +44,9 @@ query_vals = {'q':'Software Engineer',
               'radius': 50,
               'jt':'fulltime'}
 
-my_url += urlencode(query_vals)
+#my_url += urlencode(query_vals)
 
 # test class
 site1 = site_search(my_url)
 site1.is_site_form()
-print(site1.page.content)
+#print(site1.form)
