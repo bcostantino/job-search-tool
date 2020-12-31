@@ -60,8 +60,8 @@ class site_search:
             else:
                 return False
     
-    # function to clear paramaters. specify specific args to remove as kwargs (i.e. **spc_params)
-    def clr_params(self, **spc_params):
+    # function to clear paramaters. specify specific param keys to remove as *args (i.e. *spc_params)
+    def clr_params(self, *spc_params):
         if not spc_params:
             self.req_params = False
         else:
