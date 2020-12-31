@@ -28,6 +28,14 @@ class site_search:
     def __init__(self, url, params):
         self.site_url = url
         self.req_params = params
+    
+    # create object representation
+    def __repr__(self):
+        return f"site_search({self.site_url}, {self.req_params})"
+    
+    # create readable str format of object
+    def __str__(self):
+        return f"Endpoint: {self.site_url}\nParamaters: {self.req_params}"
         
     
     """
@@ -60,6 +68,5 @@ query_vals = {'q':'Software Engineer',
 #my_url += urlencode(query_vals)
 
 # test class
-site1 = site_search(my_url)
-site1.is_site_form()
-#print(site1.form)
+site1 = site_search(my_url, query_vals)
+print(site1)
