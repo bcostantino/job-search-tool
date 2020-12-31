@@ -31,6 +31,14 @@ class site_search:
     #######
     ## In order to register a site as a site search object, one must know ALL NECESSSARY query paramaters.
     ## The paramaters will be passed by paramater name(s). See self.set_params...
+    #
+    #    Example:
+    #
+    #    my_site = site_search(my_url, params={'q':'Software Engineer',
+    #                                          'l':'Sicklerville, NJ 08081',
+    #                                          'radius': 50,
+    #                                          'jt':'fulltime'})
+    #
     #######
     
     # initialize variables
