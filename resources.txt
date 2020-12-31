@@ -1,1 +1,3 @@
 https://realpython.com/beautiful-soup-web-scraper-python/
+
+http://www.compciv.org/guides/python/how-tos/creating-proper-url-query-strings/
