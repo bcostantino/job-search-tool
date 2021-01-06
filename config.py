@@ -82,7 +82,7 @@ class site_search:
     ##           'sal' : salary (i.e. 60000, 15000, 140000, etc.),
     ##            param-name : param-value}
     ##
-    ## 
+    ## **nn_params := ql = "Software Engineer", sal = "60000", param-name = param-value
     ##
     #######
     
