@@ -99,9 +99,7 @@ class site_search:
             else:
                 return False
     
-    def set_params(self):
-        
-        
+    # function to format paramaters for http query
     def format_params(self):
     
     
@@ -141,17 +139,6 @@ class site_search:
 ## scanner class definition -- to proccess user input
 ##
 ####
-
-class scanner():
-    def __init__(self):
-        
-        # scanner constructor
-        ql = input("job type")
-        sal = input("requested salary")
-        l = input("requested location")
-        rad = input("radius from location")
-        time = input("full time or part time")
-        pass
 
 def test_class():
     try:
