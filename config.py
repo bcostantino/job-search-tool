@@ -99,11 +99,9 @@ class site_search:
             else:
                 return False
     
-    def set_params(self):
-        
-        
+    # function to format paramaters for http query
     def format_params(self):
-    
+        pass
     
     # function to clear paramaters. specify specific param keys to remove as *args (i.e. *spc_params)
     def clr_params(self, *spc_params):
@@ -136,6 +134,7 @@ class site_search:
     ##
     """
 
+<<<<<<< HEAD
 ####
 ##
 ## scanner class definition -- to proccess user input
@@ -144,6 +143,8 @@ class site_search:
 
 
 
+=======
+>>>>>>> 0407860b30ed6ed1605c7e88b8139470c0fce763
 def test_class():
     try:
         
@@ -176,5 +177,5 @@ if __name__=="__main__":
     print(test_class())
     print(t_site_search)
 else:
-    test_class()
+    pass
     
