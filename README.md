@@ -1,5 +1,13 @@
 # job-search-tool
 
-<?PHP
-  echo "goon";
-?>
+<html>
+  <head>
+    <script>
+      <?PHP
+        echo "forever";
+      ?>
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
