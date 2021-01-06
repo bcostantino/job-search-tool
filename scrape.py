@@ -10,4 +10,10 @@
 #                         #
 ###########################
 
-import config
+import config as cfg
+
+class search():
+    def __init__(self):
+        pass
+    
+    
