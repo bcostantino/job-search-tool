@@ -133,26 +133,36 @@ class scanner():
         
         pass
 
-
 def test_class():
-    if __name__=="__main__":
-        try:
-            # create and format example url
-            my_url = r'https://www.indeed.com/jobs?'
-
-            # test class
-            t_payload = {'q':'Software Engineer',
-                        'l':'Sicklerville, NJ 08081',
-                        'radius': 50,
-                        'jt':'fulltime'}
-            
-            site1 = site_search(my_url)
-            site1.set_params(params=t_payload)
-            print(site1)
-            print(site1.get_req_endpoint())
-            return True
-        except:
-            return False
+    try:
         
-print(test_class())
+        # def global test variables
+        global t_url           # define test url
+        global t_payload       # define test payload
+
+        # create and format test url
+        t_url = r'https://www.indeed.com/jobs?'
+
+        # test payload
+        t_payload = {'q':'Software Engineer',
+                    'l':'Sicklerville, NJ 08081',
+                    'radius': 50,
+                    'jt':'fulltime'}
+        
+        # create global test class
+        global t_site_search
+        
+        # create and set values for test class
+        t_site_search = site_search(my_url)
+        t_site_search.set_params(params=t_payload)
+        
+        return True
+    except:
+        return False
+        
+if __name__=="__main__":
+    print(test_class())
+    print(t_site_search)
+else:
+    test_class()
     
