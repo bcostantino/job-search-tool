@@ -8,6 +8,7 @@ import scrape
 class scanner():
     def __init__(self, _iter=0):
         # scanner constructor
+        self.quit=True
         
         if _iter>0:
             cmd = input(">> ")
@@ -16,7 +17,7 @@ class scanner():
             
         
         if cmd == "help":
-            print("crt_ scrape: creates a new scraper for user \n add_site:adds a new site for scraper to scrape \n add_param: adds parameter such as salaries/location/etc")
+            print("crt_ scrape: creates a new scraper for user \nadd_site:adds a new site for scraper to scrape \nadd_param: adds parameter such as salaries/location/etc")
         
         elif "crt" in cmd:
             
@@ -27,6 +28,9 @@ class scanner():
             new_scraper = scrape.Scraper(new_sc_name)
             
             print("New Scraper() named: "+new_sc_name+" successfully created")
+            
+        elif "quit" in cmd:
+            self.quit = True
             
         elif cmd == "add_site":
             
@@ -44,9 +48,17 @@ class scanner():
         
         return new_scr_name
     
+    def parse_cmd(self, cmd):
+        pass
+    
+    def create_object(self, _type, inst_name):   
+        pass
+    
 if __name__=="__main__":
     _iter = 0
     while True:
         sc = scanner(_iter)
         _iter+=1
+        if sc.quit:
+            break
         
