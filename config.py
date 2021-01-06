@@ -48,7 +48,6 @@ class site_search:
     #                                          'l':'Sicklerville, NJ 08081',
     #                                          'radius': 50,
     #                                          'jt':'fulltime'})
-    #
     #######
     
     
