@@ -75,7 +75,7 @@ if __name__=="__main__":
   # print all of scraper's sites
   [print(t_scraper.getSites()[site].get_req_endpoint()) for site in t_scraper.getSites()]
   
-  print(len(t_scraper.getPageContent()))
+  print(t_scraper.findListings())
   
   
             

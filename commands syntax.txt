@@ -1,0 +1,13 @@
+Functions:
+
+	crt_scrape -n:{new_scraper_name}
+		
+		// ex: "crt_scrape -n:SE Job Hunt"
+
+	add_site -n:{existing_scraper_name} -sn:{new_site_name}
+		
+		// ex: "add_site -n:SE Job Hunt -sn:Indeed"
+
+	add_param -sn:{existing_site_name} -pn:{new_param_name} -pv:{new_param_value}	
+
+		// ex: "add_param -sn:Indeed -pn:sal -pv:70000"
