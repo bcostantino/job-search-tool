@@ -75,9 +75,21 @@ class site_search:
     #######
     
     
+    #######
+    ## Parameter format:
+    ##
+    ## params = {'ql' : job_type (i.e. Software Engineer, Data Analyst, Server, etc.),
+    ##           'sal' : salary (i.e. 60000, 15000, 140000, etc.),
+    ##            param-name : param-value}
+    ##
+    ## 
+    ##
+    #######
+    
     # function to set params if not initialized
     def set_params(self, params, **nn_params):
         
+        if 'q' in 
         # check paramater state
         if not self.req_params:
             self.req_params = params
@@ -144,7 +156,8 @@ def test_class():
         t_url = r'https://www.indeed.com/jobs?'
 
         # test payload
-        t_payload = {'q':'Software Engineer',
+        t_payload = {'ql':'Software Engineer',
+                    'sal':'70,000',
                     'l':'Sicklerville, NJ 08081',
                     'radius': 50,
                     'jt':'fulltime'}
