@@ -12,6 +12,7 @@
 
 import config as cfg
 import requests
+from bs4 import BeautifulSoup
 
 class scraper:
     
@@ -32,7 +33,7 @@ class scraper:
         # if site_index == 'A' get content for all sites
         if site_index=='A':
             pages = []
-            [pages.append(requests.get(self.sites[site].get_req_endpoint()).content) for page in pages]
+            [pages.append(requests.get(self.sites[site].get_req_endpoint()).content) for site in self.sites]
             return pages
         
         elif site_index in self.sites.keys():
@@ -73,6 +74,8 @@ if __name__=="__main__":
   
   # print all of scraper's sites
   [print(t_scraper.getSites()[site].get_req_endpoint()) for site in t_scraper.getSites()]
+  
+  print(len(t_scraper.getPageContent()))
   
   
             
