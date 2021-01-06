@@ -1,5 +1,5 @@
 # job-search-tool
 
 <?PHP
-  echo "goon":
+  echo "goon";
 ?>
