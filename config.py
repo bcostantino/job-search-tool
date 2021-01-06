@@ -52,7 +52,7 @@ class site_search:
     #######
     
     
-    # initialize variables
+    # initialize object variables, constructor
     def __init__(self, url, params=False):
         self.site_url = url
         self.req_params = params
@@ -153,7 +153,7 @@ def test_class():
         global t_site_search
         
         # create and set values for test class
-        t_site_search = site_search(my_url)
+        t_site_search = site_search(t_url)
         t_site_search.set_params(params=t_payload)
         
         return True
