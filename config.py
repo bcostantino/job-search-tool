@@ -4,28 +4,38 @@
 ##                                 #
 ## @ author BCnBC                  #
 ## @ date 2020-12-30               #
-## @ last-edited 2020-12-30        #
+## @ last-edited 2021-01-05        #
 ##                                 #
 ## v1.0.0                          #
 ##                                 #
 ##                                 #
 ####################################
 
+
 ######
 #
-# Library for web scraping job finder tool. Framework for web scraping in general.
+# Library for web scraping job finder tool. Framework for web scraping in general...
+#
+# Contains class code for site_search() object, and..
+#
 # Brian C & Ben C
 #
 ######
 
-import requests
-from urllib.parse import urlparse
-from urllib.parse import urlencode
-from bs4 import BeautifulSoup
+
+import requests                      # requests package to get, post http content
+from urllib.parse import urlparse    # url proccessing
+from urllib.parse import urlencode   #
+from bs4 import BeautifulSoup        # html parsing
 
 
+####
+##
+## site_search class definition -- Used to create objects containing data on a single website search
+## params: url (website url), params (paramaters for site search)
+##
+####
 
-# create site search class
 class site_search:
     
     #######
@@ -90,7 +100,7 @@ class site_search:
     # get useable http request endpoint
     def get_req_endpoint(self):
         return self.site_url + urlencode(self.req_params)
-        
+       
     """
     ## Outdated
     #
@@ -109,6 +119,20 @@ class site_search:
     #       return formExists
     ##
     """
+
+####
+##
+## scanner class definition -- to proccess user input
+##
+####
+
+class scanner():
+    def __init__(self):
+        
+        # scanner constructor
+        
+        pass
+
 
 def test_class():
     if __name__=="__main__":
