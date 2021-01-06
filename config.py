@@ -130,7 +130,7 @@ class scanner():
     def __init__(self):
         
         # scanner constructor
-        
+        i = input("User input needed: \n ask to search for job in location, experience, relevency")
         pass
 
 def test_class():
