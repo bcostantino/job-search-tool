@@ -101,7 +101,7 @@ class site_search:
     
     # function to format paramaters for http query
     def format_params(self):
-    
+        pass
     
     # function to clear paramaters. specify specific param keys to remove as *args (i.e. *spc_params)
     def clr_params(self, *spc_params):
@@ -166,5 +166,5 @@ if __name__=="__main__":
     print(test_class())
     print(t_site_search)
 else:
-    test_class()
+    pass
     
