@@ -101,7 +101,13 @@ class site_search:
     
     # function to format paramaters for http query
     def format_params(self):
-        pass
+        
+        format_params = {type_n_salary:False}
+        
+        keys = self.params.keys()
+        if (('q' in keys) or ('ql' in keys) and ('sal' in keys)):
+            if '$' in self.params['q']:
+                
     
     # function to clear paramaters. specify specific param keys to remove as *args (i.e. *spc_params)
     def clr_params(self, *spc_params):
