@@ -134,12 +134,6 @@ class site_search:
     ##
     """
 
-####
-##
-## scanner class definition -- to proccess user input
-##
-####
-
 def test_class():
     try:
         
