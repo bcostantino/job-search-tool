@@ -8,14 +8,14 @@ import scrape
 class scanner():
     def __init__(self, _iter=0):
         # scanner constructor
-        self.quit=True
+        self.quit=False
         
         if _iter>0:
             cmd = input(">> ")
+            
         else:
             cmd = input("Enter a command *type help for command list*:\n>> ")
             
-        
         if cmd == "help":
             print("crt_ scrape: creates a new scraper for user \nadd_site:adds a new site for scraper to scrape \nadd_param: adds parameter such as salaries/location/etc")
         
@@ -51,14 +51,20 @@ class scanner():
     def parse_cmd(self, cmd):
         pass
     
-    def create_object(self, _type, inst_name):   
-        pass
+    def create_object(self, _type, inst_name):
+        if _type==0:     # Scraper()
+            pass
+        elif _type==1:   # site_search()
+            pass
+        else:
+            pass
     
 if __name__=="__main__":
     _iter = 0
     while True:
         sc = scanner(_iter)
         _iter+=1
+        
         if sc.quit:
             break
         
