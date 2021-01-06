@@ -140,6 +140,17 @@ class site_search:
     ##
     """
 
+<<<<<<< HEAD
+####
+##
+## scanner class definition -- to proccess user input
+##
+####
+
+
+
+=======
+>>>>>>> 0407860b30ed6ed1605c7e88b8139470c0fce763
 def test_class():
     try:
         
