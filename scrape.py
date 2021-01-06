@@ -73,7 +73,7 @@ if __name__=="__main__":
   t_scraper.sites["indeed"].set_params(cfg.t_payload)
   
   # print all of scraper's sites
-  [print(t_scraper.getSites()[site].get_req_endpoint()) for site in t_scraper.getSites()]
+  ##[print(t_scraper.getSites()[site].get_req_endpoint()) for site in t_scraper.getSites()]
   
   print(t_scraper.findListings())
   

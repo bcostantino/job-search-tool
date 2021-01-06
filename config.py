@@ -88,8 +88,7 @@ class site_search:
     
     # function to set params if not initialized
     def set_params(self, params, **nn_params):
-        
-        if 'q' in 
+         
         # check paramater state
         if not self.req_params:
             self.req_params = params
@@ -99,6 +98,11 @@ class site_search:
                     self.req_params[key] = nn_params[key]
             else:
                 return False
+    
+    def set_params(self):
+        
+        
+    def format_params(self):
     
     
     # function to clear paramaters. specify specific param keys to remove as *args (i.e. *spc_params)
