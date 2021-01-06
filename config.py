@@ -107,7 +107,7 @@ class site_search:
         keys = self.params.keys()
         if (('q' in keys) or ('ql' in keys) and ('sal' in keys)):
             if '$' in self.params['q']:
-                
+                pass
     
     # function to clear paramaters. specify specific param keys to remove as *args (i.e. *spc_params)
     def clr_params(self, *spc_params):
@@ -120,37 +120,8 @@ class site_search:
     # get useable http request endpoint
     def get_req_endpoint(self):
         return self.site_url + urlencode(self.req_params)
-       
-    """
-    ## Outdated
-    #
-    #   # check for site form
-    #   def is_site_form(self):
-    #       formExists = False
-    #       
-    #       # scrape site to find form
-    #       self.page = requests.get(self.site_url)
-    #       self.soup = BeautifulSoup(self.page.text, "html.parser")
-    #       self.form = self.soup.find_all('form')
-    #       
-    #       for form in self.form:
-    #           print(form.prettify())
-    #       
-    #       return formExists
-    ##
-    """
-
-<<<<<<< HEAD
-####
-##
-## scanner class definition -- to proccess user input
-##
-####
 
 
-
-=======
->>>>>>> 0407860b30ed6ed1605c7e88b8139470c0fce763
 def test_class():
     try:
         
