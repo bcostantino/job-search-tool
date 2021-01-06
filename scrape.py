@@ -14,10 +14,13 @@ import config as cfg
 import requests
 from bs4 import BeautifulSoup
 
-class scraper:
+class Scraper:
     
     # define constructor
-    def __init__(self, **sites):
+    def __init__(self, name="NI", **sites):
+        
+        # init scraper name
+        self.name = name
 
         # define empty dict for object site searches
         self.sites = {}
@@ -26,6 +29,13 @@ class scraper:
         if sites:
             for site in sites:
                 self.sites[site] = sites[site]
+                
+    def __str__(self):
+        sites_rep = ''
+        for site in self.sites:
+            sites_rep += str(site)
+        
+        return "Name: "+self.name+"\nSites: "+sites_rep
     
     # define func to getContent of site_search object's page
     def getPageContent(self, site_index='A'):
@@ -62,20 +72,29 @@ class scraper:
 
 # test scraper object
 if __name__=="__main__":
+    # create and format test url
+    t_url = r'https://www.indeed.com/jobs?'
+
+    # test payload
+    t_payload = {'ql':'Software Engineer',
+                'sal':'70,000',
+                'l':'Sicklerville, NJ 08081',
+                'radius': 50,
+                'jt':'fulltime'}
   
-  # create site search object
-  ided = cfg.site_search(cfg.t_url)
+    # create site search object
+    ided = cfg.site_search(t_url)
+    
+    # create scraper object and pass ided site search
+    t_scraper = Scraper(indeed=ided)
   
-  # create scraper object and pass ided site search
-  t_scraper = scraper(indeed=ided)
+    # set parameters for site search object
+    t_scraper.sites["indeed"].set_params(t_payload)
   
-  # set parameters for site search object
-  t_scraper.sites["indeed"].set_params(cfg.t_payload)
+    # print all of scraper's sites
+    [print(t_scraper.getSites()[site].get_req_endpoint()) for site in t_scraper.getSites()]
   
-  # print all of scraper's sites
-  ##[print(t_scraper.getSites()[site].get_req_endpoint()) for site in t_scraper.getSites()]
-  
-  print(t_scraper.findListings())
+    print(t_scraper.findListings())
   
   
             
