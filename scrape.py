@@ -14,8 +14,11 @@ import config as cfg
 
 class scraper:
   def __init__(self, **sites):
+
     ## define empty dict for object site searches
     self.sites = {}
+    
+    ## add kwarg sites to self.sites dict
     if sites:
       for site in sites:
         self.sites[site] = sites[site]
