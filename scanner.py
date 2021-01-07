@@ -49,7 +49,18 @@ class scanner():
         return new_scr_name
     
     def parse_cmd(self, cmd):
-        pass
+        if "crt_scrape" in cmd:
+            syntax=cmd.split('-')
+            new_scr_name=syntax[-1][2:].capitalize()
+            
+        elif "add_site" in cmd:
+            pass
+        elif "add param" in cmd:
+            pass
+        elif "help" in cmd:
+            pass
+        elif "quit" in cmd:
+            pass
     
     def create_object(self, _type, inst_name):
         if _type==0:     # Scraper()
