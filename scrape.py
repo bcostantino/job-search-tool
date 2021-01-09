@@ -94,7 +94,7 @@ if __name__=="__main__":
     # print all of scraper's sites
     [print(t_scraper.getSites()[site].get_req_endpoint()) for site in t_scraper.getSites()]
   
-    print(t_scraper.findListings())
+    print(t_scraper.findListings("indeed"))
   
   
             
