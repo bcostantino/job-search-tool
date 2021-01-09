@@ -54,12 +54,16 @@ class scanner():
             new_scr_name=syntax[-1][2:].capitalize()
             
         elif "add_site" in cmd:
+            
             pass
         elif "add param" in cmd:
+            
             pass
         elif "help" in cmd:
+            
             pass
         elif "quit" in cmd:
+            
             pass
     
     def create_object(self, _type, inst_name):
@@ -72,6 +76,9 @@ class scanner():
     
 if __name__=="__main__":
     _iter = 0
+    
+    
+    
     while True:
         sc = scanner(_iter)
         _iter+=1
