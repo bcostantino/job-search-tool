@@ -58,11 +58,16 @@ class Scraper:
         
         # if site_index == 'A' get listings on every site
         if site_index=='A':
-            pass
+            divss = []
+            for key in self.sites:
+                pass
         
         elif site_index in self.sites.keys():
-            soup = BeautifulSoup(self.getPageContent(site_index))
-            divs = soup.findAll("div", {"class": "jobsearch-SerpJobCard unifiedRow row result clickcard vjs-highlight"})
+            page = self.getPageContent(site_index)
+            soup = BeautifulSoup(page, features="html.parser")
+            divs = soup.findAll("div", {"class": "jobsearch-SerpJobCard unifiedRow row result clickcard"})
+            
+            return divs
     
     # return dict of scraper's sites
     def getSites(self):
@@ -86,7 +91,7 @@ if __name__=="__main__":
     ided = cfg.site_search(t_url)
     
     # create scraper object and pass ided site search
-    t_scraper = Scraper(indeed=ided)
+    t_scraper = Scraper(name="tscraper", indeed=ided)
   
     # set parameters for site search object
     t_scraper.sites["indeed"].set_params(t_payload)
@@ -94,7 +99,8 @@ if __name__=="__main__":
     # print all of scraper's sites
     [print(t_scraper.getSites()[site].get_req_endpoint()) for site in t_scraper.getSites()]
   
-    print(t_scraper.findListings("indeed"))
+    print(t_scraper)
+    print(t_scraper.getPageContent("indeed"))
   
   
             
