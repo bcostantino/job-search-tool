@@ -34,12 +34,13 @@ class scanner():
             
         elif cmd == "add_site":
             
+            
             #just tell me if this is what you want
-            print(site_name + "added")
+            print(self.site_name + "added")
             
         elif cmd == "add_param": #can we have a param check to see if it is valid
         
-            print(param_name + "added")
+            print(self.param_name + "added")
     
     def parse_crt(self, cmd):
         
@@ -54,7 +55,13 @@ class scanner():
             new_scr_name=syntax[-1][2:].capitalize()
             
         elif "add_site" in cmd:
+<<<<<<< HEAD
+            syntax=cmd.split('-')
+            self.scraper_name=syntax[1][2:].capitalize()
+            self.site_name=syntax[-1][3:].capitalize()
+=======
             
+>>>>>>> 67de64d5078daf8cb4dfc3a0e8e67fad4a0d73bc
             pass
         elif "add param" in cmd:
             
